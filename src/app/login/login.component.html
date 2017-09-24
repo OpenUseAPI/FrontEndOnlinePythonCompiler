@@ -1,1 +1,36 @@
-<h1>Login</h1>
+<hesd>
+    <link rel="stylesheet" href="login.component.css">
+    </hesd>
+<form>
+    <div class="name">
+        <h1>Online python comppiler</h1>
+    </div>
+    <div class="container">
+        
+<h3>Login</h3>
+<label>Username</label>
+<input id="username" type="email" placeholder="Enter username" required>
+    
+<div>
+    <p></p>
+<label>Password</label>
+    <input id="password" type="password" placeholder="Enter password" required>
+</div>
+<p></p>
+<button id="login" type="submit">Log in</button>
+    </div>
+    </form>
+    
+<script type="text/javascript">
+document.getElementById("login").onclick = function(){
+    var user=document.getElementById("username").value;
+    var pass=document.getElementById("password").value;
+    if(user="abcd@gmail.com" && pass=="1234"){
+        alert("successful");
+        window.location.href="/Users/utkarshrastogi/Desktop/FrontEndOnlinePythonCompiler/src/app/compiler/compiler.component.html";
+    }
+    else{
+        alert("invalid credentials");
+    }
+}
+</script>

@@ -1,0 +1,24 @@
+h1{
+    margin-left: 600px;
+}
+.textarea{
+    width: 800px;
+    height: 600px;
+    
+}
+#compiler{
+    float: left;
+    padding-left: 30px;
+    vertical-align: middle;
+    
+}
+.comp{
+    
+}
+.out{
+   vertical-align: top;
+    margin-left: 30px;
+}
+.outtext{
+    vertical-align: top;
+}
