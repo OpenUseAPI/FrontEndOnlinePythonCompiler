@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Service } from '../provider/http.provider';
 
 
 @Component({
@@ -10,14 +11,19 @@ import { Router } from '@angular/router';
 export class CompilerComponent implements OnInit {
 
   code:String;
-  constructor(private router:Router) { }
+  result = "apple";
+  constructor(private router:Router, private http: Service) { }
 
   ngOnInit() {
   }
   compile(){
     console.log(this.code);
-    
+    this.http.getReply(this.code).subscribe(res => {
+      this.result = res.json().res;
+      console.log(res.json().res);
+    });
   }
+
   logout(){
    this.router.navigateByUrl('login')
    

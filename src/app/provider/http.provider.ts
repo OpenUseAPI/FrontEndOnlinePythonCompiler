@@ -6,13 +6,11 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class Service {
     constructor (private http: Http) {}
-    getReply(){
+    getReply(message): Observable<any>{
         var url = "https://pythoncompile.herokuapp.com/";
         var send = {
-            "program": "for i in range(10):\n    print(i)"
+            "program": message
         };
-        this.http.post(url, send).subscribe(res => {
-            console.log(res);
-        });
+        return this.http.post(url, send);
     }
 }
