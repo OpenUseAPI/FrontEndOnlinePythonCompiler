@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compiler',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompilerComponent implements OnInit {
 
-  constructor() { }
+  code:String;
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  compile(){
+    console.log(this.code);
+    
+  }
+  logout(){
+   this.router.navigateByUrl('login')
+   
+  }
 }
