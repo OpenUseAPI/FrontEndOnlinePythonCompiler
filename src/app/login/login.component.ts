@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Service } from '../provider/http.provider';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +8,25 @@ import { Service } from '../provider/http.provider';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: Service) {
-    
+  username:string;
+  pass:string;
+  constructor(private router: Router) {
    }
 
   ngOnInit() {
+  }
+
+  log(){
+    console.log(this.username);
+    console.log(this.pass);
+    if(this.username=="a" && this.pass=="1"){
+      this.router.navigateByUrl('compiler');
+      
+    }
+    else{
+      
+      alert("Invalid details");
+    }
   }
 
 }
