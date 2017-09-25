@@ -7,9 +7,9 @@ import {Observable} from 'rxjs/Observable';
 export class Service {
     constructor (private http: Http) {}
     getReply(message): Observable<any>{
-        var url = "https://pythoncompile.herokuapp.com/";
+        var url = "https://pythoncompile.com";
         var send = {
-            "program": message
+            "one": message
         };
         return this.http.post(url, send);
     }
